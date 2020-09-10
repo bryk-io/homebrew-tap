@@ -5,16 +5,16 @@ entities to fully manage Decentralized Identifiers as described on the version
 v1.0 of the specification.
 "
   homepage "https://github.com/bryk-io/did-method"
-  version "0.6.1"
+  version "0.7.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/bryk-io/did-method/releases/download/v0.6.1/didctl_0.6.1_darwin_amd64.tar.gz"
-    sha256 "d642cd3be43fc7fa77681eb935a4da8048ca60da137309f59753812aac100e00"
+    url "https://github.com/bryk-io/did-method/releases/download/v0.7.0/didctl_0.7.0_darwin_amd64.tar.gz"
+    sha256 "01577984d0ea83984c9d29d1aa2239a61a45cf9c8e05d1540cb8880145645dfd"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/bryk-io/did-method/releases/download/v0.6.1/didctl_0.6.1_linux_amd64.tar.gz"
-      sha256 "18ad7449ef1bbd9e412a7c44991811fefdb78533e52c1bf18d7a8e365ab6c9fc"
+      url "https://github.com/bryk-io/did-method/releases/download/v0.7.0/didctl_0.7.0_linux_amd64.tar.gz"
+      sha256 "a1ddfc7dd1f106342bf2cb87d803cfb9c46b9ceb8decc47c201a2f20f2667b35"
     end
   end
 
