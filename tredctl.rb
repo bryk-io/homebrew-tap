@@ -3,16 +3,16 @@ class Tredctl < Formula
   desc "CLI client for the 'Tamper Resistant Encrypted Data' protocol.
 "
   homepage "https://github.com/bryk-io/tred-cli"
-  version "0.4.4"
+  version "0.4.5"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/bryk-io/tred-cli/releases/download/v0.4.4/tredctl_0.4.4_darwin_amd64.tar.gz"
-    sha256 "39a84ae501e6185e67c1bd3636382784d087573f3c632a80702f8d1b582b2a3d"
+    url "https://github.com/bryk-io/tred-cli/releases/download/v0.4.5/tredctl_0.4.5_darwin_amd64.tar.gz"
+    sha256 "63b242b2dceb9d2ee93452f6e0ade8244216c7ece2d91291e1fb2cae6dfd4e55"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/bryk-io/tred-cli/releases/download/v0.4.4/tredctl_0.4.4_linux_amd64.tar.gz"
-      sha256 "8e08e9cac029dbd3780e41c6d4b2b0d92641968d40730044de4861b4d27bf46f"
+      url "https://github.com/bryk-io/tred-cli/releases/download/v0.4.5/tredctl_0.4.5_linux_amd64.tar.gz"
+      sha256 "6a5b654078cbbe19a1e22edc3de2f1aa104c1068b1230c451d29afb5b13eb087"
     end
   end
 
