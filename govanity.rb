@@ -3,16 +3,16 @@ class Govanity < Formula
   desc "Basic 'Remote Import Path' server for Golang packages.
 "
   homepage "https://github.com/bryk-io/go-vanity"
-  version "0.1.3"
+  version "0.1.4"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/bryk-io/go-vanity/releases/download/v0.1.3/govanity_0.1.3_darwin_amd64.tar.gz"
-    sha256 "aa7c35031a5b46e0f7223a7eac6af8db40207ee2a2482e82c52b3d6a45c57cb3"
+    url "https://github.com/bryk-io/go-vanity/releases/download/v0.1.4/govanity_0.1.4_darwin_amd64.tar.gz"
+    sha256 "5fce1aec0c809e0541aae552db063f953b5ab3b8d4dbd5d26e2c48fa4a6207aa"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/bryk-io/go-vanity/releases/download/v0.1.3/govanity_0.1.3_linux_amd64.tar.gz"
-      sha256 "b3de2813d5089a4792556f4d5ffbfb9cc5b345857634c1eec3834a84ec76f37b"
+      url "https://github.com/bryk-io/go-vanity/releases/download/v0.1.4/govanity_0.1.4_linux_amd64.tar.gz"
+      sha256 "b0cd316841db54cf415830a475aed40c1f859c1aea49355d94ab3996216cebd6"
     end
   end
 
