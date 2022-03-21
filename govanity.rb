@@ -6,24 +6,44 @@ class Govanity < Formula
   desc "Basic 'Remote Import Path' server for Golang packages.
 "
   homepage "https://github.com/bryk-io/go-vanity"
-  version "0.1.5"
+  version "0.1.6"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/bryk-io/go-vanity/releases/download/v0.1.5/govanity_0.1.5_darwin_amd64.tar.gz"
-      sha256 "7e430987dd44488ab11fa81dc69c260c678b3bae3c9b8cab41b16d87ed9049b3"
+      url "https://github.com/bryk-io/go-vanity/releases/download/v0.1.6/govanity_0.1.6_darwin_amd64.tar.gz"
+      sha256 "dfdd7c0c926ea1342b07df70f3df3acc88e650fe84d4d03b8da6231f8293753f"
+
+      def install
+        bin.install "govanity"
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/bryk-io/go-vanity/releases/download/v0.1.6/govanity_0.1.6_darwin_arm64.tar.gz"
+      sha256 "dd33fb231be21856dba42b319ad3b25cc9ebb1d57ae163280766523af65d20dc"
+
+      def install
+        bin.install "govanity"
+      end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/bryk-io/go-vanity/releases/download/v0.1.5/govanity_0.1.5_linux_amd64.tar.gz"
-      sha256 "875f710cfe3f017835f7062534275649071d85dc1571a8f279469715624e5870"
-    end
-  end
+      url "https://github.com/bryk-io/go-vanity/releases/download/v0.1.6/govanity_0.1.6_linux_amd64.tar.gz"
+      sha256 "391ae9c651fa4fb627873560a9803853538249a153791be6fe7fea07bd6e3b04"
 
-  def install
-    bin.install "govanity"
+      def install
+        bin.install "govanity"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/bryk-io/go-vanity/releases/download/v0.1.6/govanity_0.1.6_linux_arm64.tar.gz"
+      sha256 "63070956727ca32a57ac0688eb13fc7bd3975b1031a7b876f2e6e066a1f088a8"
+
+      def install
+        bin.install "govanity"
+      end
+    end
   end
 
   test do
