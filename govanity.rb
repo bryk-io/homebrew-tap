@@ -7,7 +7,6 @@ class Govanity < Formula
 "
   homepage "https://github.com/bryk-io/go-vanity"
   version "0.1.5"
-  bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
