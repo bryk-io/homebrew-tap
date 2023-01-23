@@ -6,20 +6,20 @@ class Govanity < Formula
   desc "Basic 'Remote Import Path' server for Golang packages.
 "
   homepage "https://github.com/bryk-io/go-vanity"
-  version "0.1.6"
+  version "0.1.7"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/bryk-io/go-vanity/releases/download/v0.1.6/govanity_0.1.6_darwin_amd64.tar.gz"
-      sha256 "dfdd7c0c926ea1342b07df70f3df3acc88e650fe84d4d03b8da6231f8293753f"
+      url "https://github.com/bryk-io/go-vanity/releases/download/v0.1.7/govanity_0.1.7_darwin_amd64.tar.gz"
+      sha256 "fef651353800e2f443d3ef65d474e86908e64882b6add58478e3dc242deef742"
 
       def install
         bin.install "govanity"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/bryk-io/go-vanity/releases/download/v0.1.6/govanity_0.1.6_darwin_arm64.tar.gz"
-      sha256 "dd33fb231be21856dba42b319ad3b25cc9ebb1d57ae163280766523af65d20dc"
+      url "https://github.com/bryk-io/go-vanity/releases/download/v0.1.7/govanity_0.1.7_darwin_arm64.tar.gz"
+      sha256 "fca115b3e276084ce90bf9ec0ba768162a6b8f8ef3c8f4ccd576187a49c8c710"
 
       def install
         bin.install "govanity"
@@ -28,17 +28,17 @@ class Govanity < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/bryk-io/go-vanity/releases/download/v0.1.6/govanity_0.1.6_linux_amd64.tar.gz"
-      sha256 "391ae9c651fa4fb627873560a9803853538249a153791be6fe7fea07bd6e3b04"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/bryk-io/go-vanity/releases/download/v0.1.7/govanity_0.1.7_linux_arm64.tar.gz"
+      sha256 "4cc8eb4673077c81c8c01360aa4e640a6298159184a09e297e7ec41031a86dc5"
 
       def install
         bin.install "govanity"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/bryk-io/go-vanity/releases/download/v0.1.6/govanity_0.1.6_linux_arm64.tar.gz"
-      sha256 "63070956727ca32a57ac0688eb13fc7bd3975b1031a7b876f2e6e066a1f088a8"
+    if Hardware::CPU.intel?
+      url "https://github.com/bryk-io/go-vanity/releases/download/v0.1.7/govanity_0.1.7_linux_amd64.tar.gz"
+      sha256 "468339c8f74fc45d1b0bf2d13f682d02daec2cd0592593475e75a691fdb3fc06"
 
       def install
         bin.install "govanity"
