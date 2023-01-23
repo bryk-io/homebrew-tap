@@ -8,11 +8,11 @@ entities to fully manage Decentralized Identifiers as described on the version
 v1.0 of the specification.
 "
   homepage "https://github.com/aidtechnology/did-method"
-  version "0.9.2"
+  version "0.9.3"
 
   on_macos do
-    url "https://github.com/aidtechnology/did-method/releases/download/v0.9.2/didctl_0.9.2_darwin_amd64.tar.gz"
-    sha256 "d0ece69e32ba8d1320f671e35d9c83e1825e7c0a8e405b6b722669022d99d11c"
+    url "https://github.com/aidtechnology/did-method/releases/download/v0.9.3/didctl_0.9.3_darwin_amd64.tar.gz"
+    sha256 "e6771a0f53300fa3d9dea09890fb53a03eea298800e5231def42689b416d03a5"
 
     def install
       bin.install "didctl"
@@ -36,8 +36,8 @@ v1.0 of the specification.
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/aidtechnology/did-method/releases/download/v0.9.2/didctl_0.9.2_linux_amd64.tar.gz"
-      sha256 "a5936cf40e59e3a5db416759bc07f0ea79a750b2736c32eba56c382c7421a65b"
+      url "https://github.com/aidtechnology/did-method/releases/download/v0.9.3/didctl_0.9.3_linux_amd64.tar.gz"
+      sha256 "f55688c119e75639a76fb13b6cdd308bb0f4768a04f2b0283b8a9063684c13b6"
 
       def install
         bin.install "didctl"
