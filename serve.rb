@@ -6,12 +6,12 @@ class Serve < Formula
   desc "Simple file system HTTP server
 "
   homepage "https://github.com/bryk-io/tred-cli"
-  version "0.1.1"
+  version "0.1.2"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/bryk-io/serve/releases/download/v0.1.1/serve_0.1.1_darwin_amd64.tar.gz"
-      sha256 "58b3df1f2e801d581570587ee269b808050defffcfe8053bf01776ac8886ae30"
+      url "https://github.com/bryk-io/serve/releases/download/v0.1.2/serve_0.1.2_darwin_amd64.tar.gz"
+      sha256 "f7d593192913214854a714f817d94e43835417cf3d8fec06f1cee5b6c5dadb37"
 
       def install
         bin.install "serve"
@@ -23,8 +23,8 @@ class Serve < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/bryk-io/serve/releases/download/v0.1.1/serve_0.1.1_darwin_arm64.tar.gz"
-      sha256 "fbf326e0ea89c3b2709537e6d15d083155642aea504c1cac8218f1bd660b1b40"
+      url "https://github.com/bryk-io/serve/releases/download/v0.1.2/serve_0.1.2_darwin_arm64.tar.gz"
+      sha256 "e5f063c391a59611db1789f51f293bbe377f66a4b44df5031f5f123156911fdb"
 
       def install
         bin.install "serve"
@@ -39,8 +39,8 @@ class Serve < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/bryk-io/serve/releases/download/v0.1.1/serve_0.1.1_linux_arm64.tar.gz"
-      sha256 "f379a9644913978211a013a35cfe0e97f0db43cef81d55e2a7874af60542db8a"
+      url "https://github.com/bryk-io/serve/releases/download/v0.1.2/serve_0.1.2_linux_arm64.tar.gz"
+      sha256 "1f4bb53a6c2aa8f3fbb1aecaa0fe34f393652b9a03ec2101b5c50843d4954904"
 
       def install
         bin.install "serve"
@@ -52,8 +52,8 @@ class Serve < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/bryk-io/serve/releases/download/v0.1.1/serve_0.1.1_linux_amd64.tar.gz"
-      sha256 "1c1e48bed10e7392bf719d0ed5df17b92b40e8663f89dce23af04481bb1c1e04"
+      url "https://github.com/bryk-io/serve/releases/download/v0.1.2/serve_0.1.2_linux_amd64.tar.gz"
+      sha256 "2e472b8e9dd271ec962f0c4c4fe8970c7021d9ecc11893f091fc7cfef90056d1"
 
       def install
         bin.install "serve"
