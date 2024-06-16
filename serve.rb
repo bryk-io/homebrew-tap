@@ -6,12 +6,12 @@ class Serve < Formula
   desc "Simple file system HTTP server
 "
   homepage "https://github.com/bryk-io/tred-cli"
-  version "0.1.4"
+  version "0.1.5"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/bryk-io/serve/releases/download/v0.1.4/serve_0.1.4_darwin_arm64.tar.gz"
-      sha256 "04de03543d3b2cdeb21f65d178b86063894e3b373b6669be4f4b5ae4f11cd605"
+    on_intel do
+      url "https://github.com/bryk-io/serve/releases/download/v0.1.5/serve_0.1.5_darwin_amd64.tar.gz"
+      sha256 "958f95d72f1ea17bd0ad7571af12a2f26cb7e78ea7865cd08426dc544d392ee4"
 
       def install
         bin.install "serve"
@@ -22,9 +22,9 @@ class Serve < Formula
         prefix.install_metafiles
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/bryk-io/serve/releases/download/v0.1.4/serve_0.1.4_darwin_amd64.tar.gz"
-      sha256 "4307aefaedac5344a8647370076478b3a2851c7dcef3449f5157b053faace0a0"
+    on_arm do
+      url "https://github.com/bryk-io/serve/releases/download/v0.1.5/serve_0.1.5_darwin_arm64.tar.gz"
+      sha256 "460fec4c65756beb6ca8624498bef0b1fd93506917822b03f8ece732a90a5e1a"
 
       def install
         bin.install "serve"
@@ -38,30 +38,34 @@ class Serve < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/bryk-io/serve/releases/download/v0.1.4/serve_0.1.4_linux_amd64.tar.gz"
-      sha256 "9711570582687930bce90f94def352b521a94922a8a9b58efa1692007983b60b"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/bryk-io/serve/releases/download/v0.1.5/serve_0.1.5_linux_amd64.tar.gz"
+        sha256 "c6778d30c5ff76e60e3cc1f9fe39bd04b690b59d5c41cf49797f242eb45c37b1"
 
-      def install
-        bin.install "serve"
-        output = Utils.popen_read("#{bin}/serve completion bash")
-        (bash_completion/"serve").write output
-        output = Utils.popen_read("#{bin}/serve completion zsh")
-        (zsh_completion/"_serve").write output
-        prefix.install_metafiles
+        def install
+          bin.install "serve"
+          output = Utils.popen_read("#{bin}/serve completion bash")
+          (bash_completion/"serve").write output
+          output = Utils.popen_read("#{bin}/serve completion zsh")
+          (zsh_completion/"_serve").write output
+          prefix.install_metafiles
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/bryk-io/serve/releases/download/v0.1.4/serve_0.1.4_linux_arm64.tar.gz"
-      sha256 "8429a1e38b02d62f6981e10a2deba3c54e28538928ef7a119cdcff2662a29359"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/bryk-io/serve/releases/download/v0.1.5/serve_0.1.5_linux_arm64.tar.gz"
+        sha256 "b7d48a8c70a7da83f7b429ddbcc3ab4e1fdab8353cd5175d9dbefbc84562e5c4"
 
-      def install
-        bin.install "serve"
-        output = Utils.popen_read("#{bin}/serve completion bash")
-        (bash_completion/"serve").write output
-        output = Utils.popen_read("#{bin}/serve completion zsh")
-        (zsh_completion/"_serve").write output
-        prefix.install_metafiles
+        def install
+          bin.install "serve"
+          output = Utils.popen_read("#{bin}/serve completion bash")
+          (bash_completion/"serve").write output
+          output = Utils.popen_read("#{bin}/serve completion zsh")
+          (zsh_completion/"_serve").write output
+          prefix.install_metafiles
+        end
       end
     end
   end
