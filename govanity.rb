@@ -6,20 +6,20 @@ class Govanity < Formula
   desc "Basic 'Remote Import Path' server for Golang packages.
 "
   homepage "https://github.com/bryk-io/go-vanity"
-  version "0.1.7"
+  version "0.1.8"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/bryk-io/go-vanity/releases/download/v0.1.7/govanity_0.1.7_darwin_amd64.tar.gz"
-      sha256 "fef651353800e2f443d3ef65d474e86908e64882b6add58478e3dc242deef742"
+    on_intel do
+      url "https://github.com/bryk-io/go-vanity/releases/download/v0.1.8/govanity_0.1.8_darwin_amd64.tar.gz"
+      sha256 "c01ae1b5897a7c64cfcef4f1f7161cc6f19d295502e31bdbb331fdf075081208"
 
       def install
         bin.install "govanity"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/bryk-io/go-vanity/releases/download/v0.1.7/govanity_0.1.7_darwin_arm64.tar.gz"
-      sha256 "fca115b3e276084ce90bf9ec0ba768162a6b8f8ef3c8f4ccd576187a49c8c710"
+    on_arm do
+      url "https://github.com/bryk-io/go-vanity/releases/download/v0.1.8/govanity_0.1.8_darwin_arm64.tar.gz"
+      sha256 "c2cbc8cf383cbb8e187b4d9c43257dfaf71d00292b776f1d9cb70ccae62a104e"
 
       def install
         bin.install "govanity"
@@ -28,20 +28,24 @@ class Govanity < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/bryk-io/go-vanity/releases/download/v0.1.7/govanity_0.1.7_linux_arm64.tar.gz"
-      sha256 "4cc8eb4673077c81c8c01360aa4e640a6298159184a09e297e7ec41031a86dc5"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/bryk-io/go-vanity/releases/download/v0.1.8/govanity_0.1.8_linux_amd64.tar.gz"
+        sha256 "c072361cbb5733992693732fcf015756aa4217b6e3d6887f7941057bd02c6e29"
 
-      def install
-        bin.install "govanity"
+        def install
+          bin.install "govanity"
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/bryk-io/go-vanity/releases/download/v0.1.7/govanity_0.1.7_linux_amd64.tar.gz"
-      sha256 "468339c8f74fc45d1b0bf2d13f682d02daec2cd0592593475e75a691fdb3fc06"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/bryk-io/go-vanity/releases/download/v0.1.8/govanity_0.1.8_linux_arm64.tar.gz"
+        sha256 "8e9d6c7581c5255ce41d170f3e8089b3187dc8fc6720f5d4bae337f38e3708e8"
 
-      def install
-        bin.install "govanity"
+        def install
+          bin.install "govanity"
+        end
       end
     end
   end
