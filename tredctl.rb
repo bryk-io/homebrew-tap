@@ -6,12 +6,12 @@ class Tredctl < Formula
   desc "CLI client for the 'Tamper Resistant Encrypted Data' protocol.
 "
   homepage "https://github.com/bryk-io/tred-cli"
-  version "0.6.3"
+  version "0.7.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/bryk-io/tred-cli/releases/download/v0.6.3/tredctl_0.6.3_darwin_arm64.tar.gz"
-      sha256 "127ea1942cd2d851abf3d07352057eef0687b9548d3a36ebaa402a5e59374f92"
+    on_intel do
+      url "https://github.com/bryk-io/tred-cli/releases/download/v0.7.0/tredctl_0.7.0_darwin_amd64.tar.gz"
+      sha256 "0cb9965f029cb143d0d31006fe3d943e6d6298e68e9f894b52e5a6e99b84e5fa"
 
       def install
         bin.install "tredctl"
@@ -22,9 +22,9 @@ class Tredctl < Formula
         prefix.install_metafiles
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/bryk-io/tred-cli/releases/download/v0.6.3/tredctl_0.6.3_darwin_amd64.tar.gz"
-      sha256 "180fc7c8b27c8f65d909189175ea498a289a5d1fdb2620793f07ec3f797a6952"
+    on_arm do
+      url "https://github.com/bryk-io/tred-cli/releases/download/v0.7.0/tredctl_0.7.0_darwin_arm64.tar.gz"
+      sha256 "044293dea3b1a30b4d5f6dce3f12e0a3a6ec8f8a5c465ff4b3c0dcc75c328ffc"
 
       def install
         bin.install "tredctl"
@@ -38,30 +38,34 @@ class Tredctl < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/bryk-io/tred-cli/releases/download/v0.6.3/tredctl_0.6.3_linux_amd64.tar.gz"
-      sha256 "69fde1f2726dd824e5f7c7bbe021e46978731b6db3db1935592bcbc43163b147"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/bryk-io/tred-cli/releases/download/v0.7.0/tredctl_0.7.0_linux_amd64.tar.gz"
+        sha256 "1de1f0989d6b26cb314c31762297126795b679fc18ea6d6251b783a3950de078"
 
-      def install
-        bin.install "tredctl"
-        output = Utils.popen_read("#{bin}/tredctl completion bash")
-        (bash_completion/"tredctl").write output
-        output = Utils.popen_read("#{bin}/tredctl completion zsh")
-        (zsh_completion/"_tredctl").write output
-        prefix.install_metafiles
+        def install
+          bin.install "tredctl"
+          output = Utils.popen_read("#{bin}/tredctl completion bash")
+          (bash_completion/"tredctl").write output
+          output = Utils.popen_read("#{bin}/tredctl completion zsh")
+          (zsh_completion/"_tredctl").write output
+          prefix.install_metafiles
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/bryk-io/tred-cli/releases/download/v0.6.3/tredctl_0.6.3_linux_arm64.tar.gz"
-      sha256 "6bfd5b5a8837cd8efc07007ed66c1aac3b0ad766ed279cea5bf0408d8a89769e"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/bryk-io/tred-cli/releases/download/v0.7.0/tredctl_0.7.0_linux_arm64.tar.gz"
+        sha256 "6dbb73f3b7bcbb2af1f4d8a21d8fc4cf39f438660b6e550783411c0b30e8ea4d"
 
-      def install
-        bin.install "tredctl"
-        output = Utils.popen_read("#{bin}/tredctl completion bash")
-        (bash_completion/"tredctl").write output
-        output = Utils.popen_read("#{bin}/tredctl completion zsh")
-        (zsh_completion/"_tredctl").write output
-        prefix.install_metafiles
+        def install
+          bin.install "tredctl"
+          output = Utils.popen_read("#{bin}/tredctl completion bash")
+          (bash_completion/"tredctl").write output
+          output = Utils.popen_read("#{bin}/tredctl completion zsh")
+          (zsh_completion/"_tredctl").write output
+          prefix.install_metafiles
+        end
       end
     end
   end
