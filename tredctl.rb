@@ -6,12 +6,12 @@ class Tredctl < Formula
   desc "CLI client for the 'Tamper Resistant Encrypted Data' protocol.
 "
   homepage "https://github.com/bryk-io/tred-cli"
-  version "0.7.0"
+  version "0.7.1"
 
   on_macos do
     on_intel do
-      url "https://github.com/bryk-io/tred-cli/releases/download/v0.7.0/tredctl_0.7.0_darwin_amd64.tar.gz"
-      sha256 "0cb9965f029cb143d0d31006fe3d943e6d6298e68e9f894b52e5a6e99b84e5fa"
+      url "https://github.com/bryk-io/tred-cli/releases/download/v0.7.1/tredctl_0.7.1_darwin_amd64.tar.gz"
+      sha256 "f3572e5d3da4baf07dd9d16351cfa8a0033d6a7d28e4a1117da555d39316bead"
 
       def install
         bin.install "tredctl"
@@ -23,8 +23,8 @@ class Tredctl < Formula
       end
     end
     on_arm do
-      url "https://github.com/bryk-io/tred-cli/releases/download/v0.7.0/tredctl_0.7.0_darwin_arm64.tar.gz"
-      sha256 "044293dea3b1a30b4d5f6dce3f12e0a3a6ec8f8a5c465ff4b3c0dcc75c328ffc"
+      url "https://github.com/bryk-io/tred-cli/releases/download/v0.7.1/tredctl_0.7.1_darwin_arm64.tar.gz"
+      sha256 "0713d658a294b5b115892b896cc1a276b05730a588086c51a3b800fac90a0e1a"
 
       def install
         bin.install "tredctl"
@@ -40,8 +40,8 @@ class Tredctl < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/bryk-io/tred-cli/releases/download/v0.7.0/tredctl_0.7.0_linux_amd64.tar.gz"
-        sha256 "1de1f0989d6b26cb314c31762297126795b679fc18ea6d6251b783a3950de078"
+        url "https://github.com/bryk-io/tred-cli/releases/download/v0.7.1/tredctl_0.7.1_linux_amd64.tar.gz"
+        sha256 "ce52669ec5eb37edda8102adafda80079982b6aaaef0d4aa3587bc7dc727b436"
 
         def install
           bin.install "tredctl"
@@ -55,8 +55,8 @@ class Tredctl < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/bryk-io/tred-cli/releases/download/v0.7.0/tredctl_0.7.0_linux_arm64.tar.gz"
-        sha256 "6dbb73f3b7bcbb2af1f4d8a21d8fc4cf39f438660b6e550783411c0b30e8ea4d"
+        url "https://github.com/bryk-io/tred-cli/releases/download/v0.7.1/tredctl_0.7.1_linux_arm64.tar.gz"
+        sha256 "8dff9e237a9258f4353a695a218592f6a20113dff83bd933604223d7e4457cf5"
 
         def install
           bin.install "tredctl"
