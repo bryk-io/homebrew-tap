@@ -6,12 +6,12 @@ class Serve < Formula
   desc "Simple file system HTTP server
 "
   homepage "https://github.com/bryk-io/tred-cli"
-  version "0.1.5"
+  version "0.1.6"
 
   on_macos do
-    on_intel do
-      url "https://github.com/bryk-io/serve/releases/download/v0.1.5/serve_0.1.5_darwin_amd64.tar.gz"
-      sha256 "958f95d72f1ea17bd0ad7571af12a2f26cb7e78ea7865cd08426dc544d392ee4"
+    if Hardware::CPU.intel?
+      url "https://github.com/bryk-io/serve/releases/download/v0.1.6/serve_0.1.6_darwin_amd64.tar.gz"
+      sha256 "503683c2bf79446625aec2d1174fd8e32159f41953c30f88f51b984d9449602d"
 
       def install
         bin.install "serve"
@@ -22,9 +22,9 @@ class Serve < Formula
         prefix.install_metafiles
       end
     end
-    on_arm do
-      url "https://github.com/bryk-io/serve/releases/download/v0.1.5/serve_0.1.5_darwin_arm64.tar.gz"
-      sha256 "460fec4c65756beb6ca8624498bef0b1fd93506917822b03f8ece732a90a5e1a"
+    if Hardware::CPU.arm?
+      url "https://github.com/bryk-io/serve/releases/download/v0.1.6/serve_0.1.6_darwin_arm64.tar.gz"
+      sha256 "81f682ba91aeca488620b3f65752d4831a0641d238df1215845397d3023e7b5b"
 
       def install
         bin.install "serve"
@@ -38,10 +38,10 @@ class Serve < Formula
   end
 
   on_linux do
-    on_intel do
+    if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/bryk-io/serve/releases/download/v0.1.5/serve_0.1.5_linux_amd64.tar.gz"
-        sha256 "c6778d30c5ff76e60e3cc1f9fe39bd04b690b59d5c41cf49797f242eb45c37b1"
+        url "https://github.com/bryk-io/serve/releases/download/v0.1.6/serve_0.1.6_linux_amd64.tar.gz"
+        sha256 "f400682be48c7aa1d03ede36a8c603cbf2871c908da263397e5f6e015947f5bc"
 
         def install
           bin.install "serve"
@@ -53,10 +53,10 @@ class Serve < Formula
         end
       end
     end
-    on_arm do
+    if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/bryk-io/serve/releases/download/v0.1.5/serve_0.1.5_linux_arm64.tar.gz"
-        sha256 "b7d48a8c70a7da83f7b429ddbcc3ab4e1fdab8353cd5175d9dbefbc84562e5c4"
+        url "https://github.com/bryk-io/serve/releases/download/v0.1.6/serve_0.1.6_linux_arm64.tar.gz"
+        sha256 "5706997e4827d00cef79b7c4797d5763600df66b25189820843c8b8ef268430b"
 
         def install
           bin.install "serve"
